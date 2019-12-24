@@ -2,21 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>React Hello World</title>
+  <title>Sally Student's Resume</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header id="application-root"></header>
+    <div id="application-root"></div>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans%7CYeseva+One&display=swap" rel="stylesheet">
     <script type="text/babel">
 
+        function Section(props){
+            return (
+                <section>
+                    <h2>{props.className}</h2>
+                    {props.children}
+                </section>
+            )
+        }
+
         function App(props) {
-        console.log(props)
-        return (
-            <h1>
-                This is {props.id}'s Resume.
-            </h1>
+            console.log(props)
+            return (
+                <div>
+                    <header>
+                        <h1>
+                            This is {props.id}'s Resume.
+                        </h1>
+                    </header>
+                    <main>
+                        <address>
+                            <img src="profile-pic.jpg" alt="profile picture" />
+                            <h2>{props.id}</h2>
+                            <p>Phone Number: 123-456-7890</p>
+                            <a href="mailto:sallystudent@gmail.com">sallystudent@gmail.com</a>                        
+                        </address>
+                        <Section className="Education">
+                            <ul>
+                                <li><em>Foreign Languages and Literatures</em> (B.A.) National Taiwan Univerity, Taiwan (2008-2012)</li>
+                            </ul>
+                        </Section>
+                        <Section className="Work History">
+                            <ul>
+                                <li>
+                                    <h3>Marketing Operations Manager, Fara.Inc (2016/1-Present)</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quas vero aliquam. Esse saepe, est maxime ipsa nisi corrupti voluptatum dolore similique illo rem vero totam, obcaecati, maiores iusto minus!</p>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <h3>Email Marketing Specialist, Newegg (2013/3-2015/12)</h3>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque quas vero aliquam. Esse saepe, est maxime ipsa nisi corrupti voluptatum dolore similique illo rem vero totam, obcaecati, maiores iusto minus!</p>
+                                </li>
+                            </ul>
+                            </Section>
+                    </main>
+                </div>
             )
         }
 

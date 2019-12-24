@@ -1,0 +1,24 @@
+body {
+    background-color: #fff7c0;
+    box-sizing: border-box;
+    padding: 2%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+address {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+@media screen and (min-width: 968px){
+    main {
+        display: flex;
+        flex-direction: row;
+        padding-top: 3%;
+    }
+    section {
+        padding: 10px;
+        min-width: 250px;
+    }
+}
